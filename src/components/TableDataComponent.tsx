@@ -205,7 +205,7 @@ export const columns: ColumnDef<CarResponseType>[] = [
       );
     },
   },
-];
+]
 
 export function DataTableComponent() {
   const [sorting, setSorting] = React.useState<SortingState>([]);

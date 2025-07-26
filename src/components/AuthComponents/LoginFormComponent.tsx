@@ -16,7 +16,7 @@ const formValidation = z.object({
     password: z.string().min(8, {
         message: "Password must be at least 8 character up"
     })
-    .regex(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/),
+   
   
 })
 

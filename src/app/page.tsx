@@ -1,12 +1,16 @@
-import CartDisplay from "@/components/CartComponents/DisplayAddToCart";
-import ProductList from "@/components/ProductList";
+import { SignIn, SignOut } from "@/components/auth/AuthButton";
+import { authOptions } from "@/lib/key-cloak-auth/next-auth-options";
+import { getServerSession } from "next-auth";
 
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+  console.log(session);
   return (
    <div>
-  <ProductList/>
-  <CartDisplay/>
+       {!!session && <pre>{JSON.stringify(session, null, 2)}</pre>}
+      {!!session ? <SignOut /> : <SignIn/>}
+
    </div>
   );
 }
